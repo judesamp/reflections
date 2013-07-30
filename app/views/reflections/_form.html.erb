@@ -1,0 +1,34 @@
+<%= form_for(@reflection) do |f| %>
+  <% if @reflection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reflection.errors.count, "error") %> prohibited this reflection from being saved:</h2>
+
+      <ul>
+      <% @reflection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :scripture %><br />
+    <%= f.text_field :scripture %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br />
+    <%= f.text_area :text %>
+  </div>
+  <div class="field">
+    <%= f.label :prayer %><br />
+    <%= f.text_field :prayer %>
+  </div>
+  <div class="field">
+    <%= f.label :question %><br />
+    <%= f.text_field :question %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

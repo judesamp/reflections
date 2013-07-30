@@ -1,0 +1,115 @@
+#encoding: utf-8
+
+Given(/^there are seven reflections$/) do
+  reflection = create_list(:reflection, 7)
+  Reflection.all.length.should == 7
+end
+
+When(/^I go to the home page$/) do
+  visit '/'
+end
+
+Then(/^I should see "(.*?)" inside main panel$/) do |arg1|
+  page.should have_selector "h1", text: "Welcome to Reflections"
+end
+
+Then(/^I should see seven links in sidebar$/) do
+  page.should have_link "1"
+  page.should have_link "2"
+  page.should have_link "3"
+  page.should have_link "4"
+  page.should have_link "5"
+  page.should have_link "6"
+  page.should have_link "7"
+end
+
+Given(/^I am a user$/) do
+  visit '/'
+end
+
+Then(/^I should see an invitation to "(.*?)" at the top of the page$/) do |arg1|
+  page.should have_content "Sign up"
+  page.should have_content "Sign in"
+end
+
+
+
+
+
+Given(/^I have I have gone to the home page$/) do
+  reflection = create_list(:reflection, 7)
+  visit '/'
+end
+
+When(/^I hover over the first link in the sidebar$/) do
+  begin
+    evaluate_script("$('#link_1').trigger('mouseover')")
+    rescue Capybara::NotSupportedByDriverError
+  end
+end
+
+Then(/^I should see a Scripture reference and a date for the first reflection$/) do
+  page.should have_content('Genesis 1')
+end
+
+
+Given(/^I am on the home page$/) do
+  reflection = create_list(:reflection, 7)
+  visit '/'
+end
+
+
+When(/^I click on a link in the sidebar nav$/) do
+  click_link('link_1')
+end
+
+Then(/^I should see the appropriate reflection$/) do
+  page.should have_content "text or body of reflection for 1"
+end
+
+
+
+
+# Given(/^I have I have gone to the home page again$/) do
+#   reflection = create_list(:reflection, 7)
+#   visit '/'
+# end
+# 
+# 
+# When(/^I click on the right arrow key in the bottom nav$/) do
+#   page.find('#right_arrow_button')
+# end
+# 
+# Then(/^the background video should change$/) do
+#   pending # ("//source[@src = 'assets/tunnel_animation.mp4']")
+# end
+
+
+
+Given(/^there are more than ten reflections$/) do
+  reflection = create_list(:reflection, 20)
+end
+
+When(/^I go the home page$/) do
+  visit '/'
+end
+
+Then(/^I should see the first ten reflections displayed$/) do
+  page.should_not have_link "11"
+end
+
+When(/^I click on the arrow at the bottom of the side nave$/) do
+  click_link('Next')
+end
+
+Then(/^I should see the next ten displayed in the side nav \(or as many as available\)$/) do
+  page.should_not have_link("1", href: "/reflections/1")
+  page.should_not have_link "10"
+  page.should have_link "11"
+  page.should have_link "20"
+end
+
+
+
+
+

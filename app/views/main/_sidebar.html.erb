@@ -1,0 +1,35 @@
+
+    <%= javascript_include_tag 'pagination' %>
+ 
+ 
+    <ul id="menu">
+
+      
+      <% num = 1%>
+  <% @sidebar_list.each do |reflection| %>
+  <li>
+    <%= link_to reflection_path(reflection.id),{:remote => true, :class=>"number", :id=>"link_#{num}" } do %>
+      <i class="icon-fire"></i>
+      <%= @sidebar_list.offset + num %>
+      <%end%>
+      <ul class="submenu" id="submenu_#{num}">
+        <li><a=href="#">date</a></li>
+        <li><a=href="#"><%= reflection.scripture %></a></li>
+      </ul>
+    </li>
+  <% num += 1%>
+  <% end %>
+  
+  <div class="digg_pagination">  
+    <%= will_paginate @sidebar_list, :page_links => false %>
+  </div>
+  
+</ul>
+
+ 
+  
+  
+  
+  
+ 
+

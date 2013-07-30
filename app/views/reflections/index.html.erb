@@ -1,0 +1,32 @@
+<h1>Listing reflections</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scripture</th>
+      <th>Text</th>
+      <th>Prayer</th>
+      <th>Question</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reflections.each do |reflection| %>
+    <tr>
+      <td><%= reflection.scripture %></td>
+      <td><%= reflection.text %></td>
+      <td><%= reflection.prayer %></td>
+      <td><%= reflection.question %></td>
+      <td><%= link_to 'Show', reflection %></td>
+      <td><%= link_to 'Edit', edit_reflection_path(reflection) %></td>
+      <td><%= link_to 'Destroy', reflection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+
+<%= link_to 'New Reflection', new_reflection_path %>
