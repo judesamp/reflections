@@ -1,9 +1,5 @@
 class Reflection < ActiveRecord::Base
-  validates_presence_of :text
-  has_many :groups
-  has_many :users, through: :groups
-  
-  
-  
+  validates_presence_of :text, :group_id
+  belongs_to :group
   
 end

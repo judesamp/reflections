@@ -28,7 +28,14 @@
     <%= f.text_field :question %>
   </div>
   
+  <div class="field">
+    <%= f.label :group_id %><br />
+    <%= select("reflection", "group_id", Group.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'}) %>
+  </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+  
+  
 <% end %>

@@ -9,8 +9,9 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-         
-  has_many :groups
-  has_many :reflections, through: :groups
+  
+  has_many :user_group_joins
+  has_many :groups, through: :user_group_joins
+  
 
 end

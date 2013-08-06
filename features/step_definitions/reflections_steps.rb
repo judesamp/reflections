@@ -9,31 +9,24 @@ When(/^I go to the home page$/) do
   visit '/'
 end
 
-Then(/^I should see "(.*?)" inside main panel$/) do |arg1|
-  page.should have_selector "h1", text: "Welcome to Reflections"
+Then(/^I should see the greeting$/) do
+  page.has_selector?('#greeting')
 end
 
-Then(/^I should see seven links in sidebar$/) do
-  page.should have_link "1"
-  page.should have_link "2"
-  page.should have_link "3"
-  page.should have_link "4"
-  page.should have_link "5"
-  page.should have_link "6"
-  page.should have_link "7"
-end
+# Then(/^I should see "(.*?)" inside main panel$/) do |arg1|
+#   page.should have_selector "h1", text: "Welcome to Reflections"
+# end
 
-Given(/^I am a user$/) do
-  visit '/'
+Then(/^I should see (\d+) links in sidebar$/) do |count|
+  for number in count
+    page.find("sidebar").has_selector?("link_#{number}")
+  end
 end
 
 Then(/^I should see an invitation to "(.*?)" at the top of the page$/) do |arg1|
   page.should have_content "Sign up"
-  page.should have_content "Sign in"
+  page.should have_content "Login"
 end
-
-
-
 
 
 Given(/^I have I have gone to the home page$/) do

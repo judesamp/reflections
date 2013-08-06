@@ -3,27 +3,27 @@ Feature: Reflections Index
   As a general web user
   I want to be able to view and select reflections
   
-  Scenario: A user with no preferences set
+  Scenario: An unauthenticated user visits home page
     Given there are seven reflections
     When I go to the home page
-    Then I should see "Welcome" inside main panel
+    Then I should see the greeting
     And I should see seven links in sidebar
       
-      Scenario:
-        Given I am a user
-        When I go to the home page
-        Then I should see an invitation to "Sign up" at the top of the page
-        And I should see an invitation to "Sign in" at the top of the page
+  Scenario:
+    Given I am a user
+    When I go to the home page
+    Then I should see an invitation to "Sign up" at the top of the page
+    And I should see an invitation to "Sign in" at the top of the page
+
+  Scenario:
+    Given I have I have gone to the home page
+    When I hover over the first link in the sidebar
+    Then I should see a Scripture reference and a date for the first reflection
     
-    Scenario:
-      Given I have I have gone to the home page
-      When I hover over the first link in the sidebar
-      Then I should see a Scripture reference and a date for the first reflection
-      
-      Scenario:
-        Given I am on the home page
-        When I click on a link in the sidebar nav
-        Then I should see the appropriate reflection
+  Scenario:
+    Given I am on the home page
+    When I click on a link in the sidebar nav
+    Then I should see the appropriate reflection
       
       
     # Scenario:

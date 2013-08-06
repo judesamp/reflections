@@ -5,10 +5,5 @@ class ApplicationController < ActionController::Base
   
   def index
     @reflections = Reflection.all
-  end
-  
-  
- 
-  
-  
+  end 
 end
