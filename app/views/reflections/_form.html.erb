@@ -29,8 +29,8 @@
   </div>
   
   <div class="field">
-    <%= f.label :group_id %><br />
-    <%= select("reflection", "group_id", Group.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'}) %>
+    <%= f.label :collection_id %><br />
+    <%= select("reflection", "collection_id", Collection.all.collect {|p| [ p.name, p.id ] }, {include_blank: 'None'}) %>
   </div>
   
   <div class="actions">

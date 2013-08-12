@@ -1,22 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Image:</strong>
+  <%= @collection.image_url %>
+</p>
+
+<p>
   <strong>Name:</strong>
-  <%= @group.name %>
+  <%= @collection.name %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @group.description %>
+  <%= @collection.description %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @group.price %>
+  <%= @collection.price %>
 </p>
 
+
+
+
+
 <ul>
-  <% @group.reflections.each do |reflection| %>
+  <% @collection.reflections.each do |reflection| %>
   <li><%= reflection.scripture %></li>
   <% end %>
 </ul>
@@ -24,5 +33,5 @@
 
 
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %>

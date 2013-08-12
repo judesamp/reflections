@@ -4,51 +4,29 @@ Feature: Reflections Index
   I want to be able to view and select reflections
   
   Scenario: An unauthenticated user visits home page
-    Given there are seven reflections
+    Given there is a collection named "Free"
+    And there are seven reflections
     When I go to the home page
     Then I should see the greeting
-    And I should see seven links in sidebar
-      
-  Scenario:
-    Given I am a user
-    When I go to the home page
-    Then I should see an invitation to "Sign up" at the top of the page
-    And I should see an invitation to "Sign in" at the top of the page
-
-  Scenario:
-    Given I have I have gone to the home page
+    And I should see 7 links in sidebar
+    And I should see an invitation to "Sign up" at the top of the page
+    And I should see an invitation to "Login" at the top of the page
+    
     When I hover over the first link in the sidebar
     Then I should see a Scripture reference and a date for the first reflection
-    
-  Scenario:
-    Given I am on the home page
+
     When I click on a link in the sidebar nav
     Then I should see the appropriate reflection
       
-      
-    # Scenario:
-  #     Given I have I have gone to the home page again
-  #     When I click on the right arrow key in the bottom nav
-  #     Then the background video should change
-  #     
-  #     Scenario:
-  #       Given I have I have gone to the home page
-  #       And clicked on the right arrow key in the bottom nav (to switch videos)
-  #       When I click on the left arrow key in the bottom nav
-  #       Then I should see the background video revert back to original video
-  #       
-  #   Scenario:
-  #     Given I have I have gone to the home page
-  #     When I click on the mute button in the bottom nav
-  #     Then the background video audio should be muted
-      
-    Scenario: More than ten reflections
-      Given there are more than ten reflections
-      When I go the home page 
-      Then I should see the first ten reflections displayed
-      When I click on the arrow at the bottom of the side nave
-      Then I should see the next ten displayed in the side nav (or as many as available)
-      
+        
+  Scenario: More than ten reflections
+    Given there is a collection named "Free"
+    And there are more than 7 reflections
+    When I go the home page 
+    Then I should see the first 7 reflections displayed
+    When I click on the arrow at the bottom of the side nave
+    Then I should see the next 7 displayed in the sidebar (or as many as available)
+    
   
     
     

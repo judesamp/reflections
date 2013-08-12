@@ -1,14 +1,15 @@
-big_buck_bunny = ['assets/big-buck-bunny.mp4','assets/big-buck-bunny.webm','assets/big-buck-bunny.ogv']
-christmas_snow = ['assets/christmas_snow.mp4', 'assets/christmas_snow.ogv', 'assets/christmas_snow.webm', 'assets/christmas_snow.jpg']
-text_replacement = ['assets/text_replacement.mp4', 'assets/text_replacement.ogv', 'assets/text_replacement.webm', 'assets/text_replacement.jpg']
-tunnel_animation = ['assets/tunnel_animation.mp4', 'assets/tunnel_animation.ogv', 'assets/tunnel_animation.webm', 'assets/tunnel_animation.jpg']
+big_buck_bunny = ['assets/000829753-grass.mp4']
+christmas_snow = ['assets/022957341-sunset-sky-over-lake-horizon-d.mp4']
+text_replacement = ['assets/018167892-columbia-river-gorge-sunset.mp4']
+tunnel_animation = ['assets/022322569-morning-fiery-river-ntsc.mp4']
+number_five = ['assets/000731966-pampas-grass.mp4']
 
-all_videos = [big_buck_bunny, christmas_snow, text_replacement, tunnel_animation]
-videos_array = [big_buck_bunny, christmas_snow, text_replacement, tunnel_animation]
+all_videos = [big_buck_bunny, christmas_snow, text_replacement, tunnel_animation, number_five]
+videos_array = [big_buck_bunny, christmas_snow, text_replacement, tunnel_animation, number_five]
 
 video_carousel = () -> 
     if videos_array.length == 0 
-        videos_array = [big_buck_bunny, christmas_snow, text_replacement, tunnel_animation]; current_video = videos_array.pop(); return current_video;
+        videos_array = [big_buck_bunny, christmas_snow, text_replacement, tunnel_animation, number_five]; current_video = videos_array.pop(); return current_video;
     else
         current_video = videos_array.pop();
         return current_video;
@@ -30,6 +31,9 @@ $(document).on "ready", ->
 
    $('#mute_button').click ->
        $('.video-background').videobackground('mute');
+       
+       
+ 
    
         
     

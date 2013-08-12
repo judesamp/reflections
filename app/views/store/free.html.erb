@@ -1,0 +1,36 @@
+
+
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+
+<div class="centered">
+  <%= link_to 'Back to Store', store_path, :class=>"btn btn-info" %>
+</div>
+
+<div class="row">
+  <% @free_collections.each do |collection| %>
+   
+  
+    <div class="col-lg-4">
+      <div class="entry">
+  
+   
+
+        <%= image_tag(collection.image_url) %>
+        <h3><%= collection.name %></h3>
+        <p class="description"><%= sanitize(collection.description) %></p>
+        <div class="price_line">
+          <button type="button" class="btn btn-info">Add to Your Bookshelf</button>
+        </div>
+      </div>
+    </div>
+      <% end %>
+    
+    
+    
+    
+  </div>
+     
+

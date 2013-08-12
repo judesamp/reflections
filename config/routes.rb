@@ -1,6 +1,12 @@
 Reflections::Application.routes.draw do
 
-  resources :groups
+  resources :line_items
+
+  resources :carts
+
+  get "store" => "store#index"
+  get "free" => "store#free"
+  resources :collections
 
   devise_for :users
   
@@ -14,7 +20,7 @@ Reflections::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: "main#index", as: 'main'
+  root to: "main#index", as: "main"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,32 +1,38 @@
+<div class='<%= controller.controller_name %>'>
 <h1>Listing reflections</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Scripture</th>
-      <th>Text</th>
-      <th>Prayer</th>
-      <th>Question</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div class="centered">
+<%= link_to 'New Reflection', new_reflection_path %>
+</div>
 
-  <tbody>
+
+<table>
+  
+
     <% @reflections.each do |reflection| %>
-    <tr>
-      <td><%= reflection.scripture %></td>
-      <td><%= reflection.text %></td>
+    
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <td class="list_description">
+        <dl>
+          <dt><%=reflection.scripture%> | October 1, 2014</dt>
+          <dd><%= truncate(strip_tags(reflection.text), length: 80) %>
+        
+              
       <td><%= reflection.prayer %></td>
       <td><%= reflection.question %></td>
-      <td><%= link_to 'Show', reflection %></td>
-      <td><%= link_to 'Edit', edit_reflection_path(reflection) %></td>
-      <td><%= link_to 'Destroy', reflection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+        </dl>
+      </td>
+    
+    <td class="list_actions">
+      <%= link_to 'Show', reflection %></br>
+      <%= link_to 'Edit', edit_reflection_path(reflection) %></br>
+      <%= link_to 'Destroy', reflection, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+    
     <% end %>
-  </tbody>
 </table>
 <br />
 
-<%= link_to 'New Reflection', new_reflection_path %>
+
+</div>

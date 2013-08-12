@@ -1,5 +1,5 @@
 class Reflection < ActiveRecord::Base
-  validates_presence_of :text, :group_id
-  belongs_to :group
+  validates_presence_of :text, :collection_id
+  belongs_to :collection
   
 end

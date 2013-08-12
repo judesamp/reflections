@@ -1,0 +1,103 @@
+// Place all the styles related to the Store controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.store {
+    
+   
+        li {
+            list-style: none;
+            display:inline;
+            a {
+                color: black;
+                font-size: small;
+                
+            }
+        }
+  
+    
+    
+    
+    
+    .entry {
+      
+        background: darkgray;
+        padding: 1px;
+        margin-bottom: 25px;
+    
+    
+        img {
+            width: 80px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            position:absolute;
+        }
+    
+        h3 {
+            font-size: 120%;
+            font-family: sans-serif;
+            margin-left: 100px;
+            margin-top: 0;
+            margin-bottom: 2px;
+            color: #227;
+        }
+        
+    
+        p, div.price_line {
+            margin-left: 100px;
+            margin-top: 0.5em;
+            margin-bottom: 0.8em;
+            
+            form, div {
+                display:inline;
+            }
+        }
+    
+        .price {
+            color: #44a;
+            font-weight: bold;
+            margin-right: 3em;
+            
+        }
+    
+    }
+    
+}
+
+#banner {
+    background: lightgray;
+    padding: 30px 10px 10px 10px;
+    border-bottom: 2px solid;
+    font: small-caps 40px/40px "Times New Roman", serif;
+    color: darkgray;
+    text-align: center;
+    
+   
+}
+    
+#notice {
+    color: #000 !important;
+    border: 2px solid red;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #f0f0f0;
+    font: bold smaller sans-serif;
+}
+
+#user_nav {
+    position:fixed;
+    top: 0px;
+    right: 0px;
+    background: white;
+    opacity: .7;
+}
+
+.my_navigation {
+    position:relative;
+    top: 5px;
+}
+
+
+

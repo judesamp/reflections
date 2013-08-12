@@ -6,6 +6,7 @@ FactoryGirl.define do
     reflection.sequence(:text) { |num| "text or body of reflection for #{num}"}
     reflection.prayer "prayer. Amen."
     reflection.question "Question?"
+    reflection.collection_id 1
     reflection.sequence(:scripture) { |num| "Genesis #{num}"}
     
   end

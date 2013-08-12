@@ -1,27 +1,36 @@
-<h1>Listing groups</h1>
-
+<div class='<%= controller.controller_name %>'>
+  <h1>Listing Collections</h1>
+  
+  <div class="centered">
+   <%= link_to 'New collection', new_collection_path %>
+  </div>
+  
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  
+  
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+    <% @collections.each do |collection| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= image_tag(collection.image_url, class:'list_image')%></td>
+        <td class="list_description">
+          <dl>
+            <dt><%= collection.name %></dt>
+            <dd><%= truncate(strip_tags(collection.description), length: 80 ) %></dt>
+          </dl> 
+        </td>
+        <td class="list_actions">
+          <%= link_to 'Show', collection %><br/>
+          <%= link_to 'Edit', edit_collection_path(collection) %><br/>
+        <%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
       </tr>
     <% end %>
-  </tbody>
+   
 </table>
 
 <br>
 
-<%= link_to 'New Group', new_group_path %>
+</div>
+
+

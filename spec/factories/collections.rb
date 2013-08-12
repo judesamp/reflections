@@ -1,8 +1,9 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :user_group_join do
-    user_id 1
-    group_id 1
+  factory :collection do
+    name "Free"
+    description "A collection of devotions"
+    price 9.99
   end
 end

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :user_group_joins
-  has_many :groups, through: :user_group_joins
+  has_many :collections, through: :user_group_joins
   
 
 end

@@ -4,9 +4,7 @@
 
 
 
-html {
-    height: 100%;
-}
+
 
 body {
     height:100%;
@@ -16,7 +14,18 @@ body {
 
 #container {
     height: 100%;
+    padding: 0px;
+    margin-left: 105px;
     
+    #content_div {
+        margin: 40px auto 0px auto;
+        padding-top: 40px;
+        width: 90%;
+        height: 80%;
+
+}
+    
+   
     
 
 
@@ -26,38 +35,34 @@ h1 {
 }
 
 #menu {
-        float:left;
-        height: 100%;
-        text-align: center;
-        width: 8%;
-        margin: 0px;
-        padding: 0px;
-        background: white;
-        opacity: .7;
-        color:black;
-        font-size: 150%;
-        z-index: 8675309;
+    position:absolute;
+    left: 0px;
+    top: 0px;    
+    height: 100%;
+    text-align: center;
+    width: 100px;
+    margin: 0px;
+    padding: 0px;
+    background: white;
+    opacity: .7;
+    color:black;
+    font-size: 150%;
+    z-index: 8675309;
         
-        .submenu {
-            width: 160px;
-            background: rgba(0,0,0,1);
-            color:white;
-            font-size: 80%;
-            z-index: 8675309;
-            
+    .submenu {
+        width: 160px;
+        background: rgba(0,0,0,1);
+        color:white;
+        font-size: 80%;
+        z-index: 8675309;
         }
-    
+
     }
     
-    #content_div {
-        padding: 0px;
-        margin: 20px 0px 0px 0px;
-        float:right;
-        width: 90%;
-        height: 80%;
+    
         
         #reflection {
-            margin:auto;
+            margin: auto;
             padding: 30px;
             width: 60%; 
             height: 90%;
@@ -69,7 +74,8 @@ h1 {
     
         #greeting {
             
-            margin:auto;
+            margin: auto;
+            padding: 30px;
             width: 60%;
             margin:auto;
             background:white;
@@ -80,10 +86,6 @@ h1 {
             
        
         }
-        
-        
-        
-    }
 
 }
 
@@ -181,6 +183,11 @@ video {
         background: white;
         opacity: .7;
     }
+    
+    #store {
+        font-size: small;
+    }
+    
 //
 
 //    #reflection {
@@ -249,3 +256,5 @@ video {
 //}
 //
 //
+
+   

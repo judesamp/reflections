@@ -1,4 +1,4 @@
-json.array!(@groups) do |group|
-  json.extract! group, :name
-  json.url group_url(group, format: :json)
+json.array!(@collections) do |collection|
+  json.extract! collection, :name
+  json.url collection_url(collection, format: :json)
 end

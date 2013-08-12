@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery.videobackground.js
 //= require jquery.ui.all
-//= require_tree .
+//= require_tree ./sitewide
+
+

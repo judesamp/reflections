@@ -1,5 +1,5 @@
-
-
+ <%= javascript_include_tag "main/main", "data-turbolinks-track" => true %>
+<div class='<%= controller.controller_name %>'>
 <javascript "pagination">
 <div id="container">
   
@@ -12,8 +12,8 @@
   
   
  
-  
-  <h1><%= @test.inspect %></h1>
+  <!-- <h1><%= link_to "Store", store_path %></h1> -->
+  <!-- <h1><%= @test.inspect %></h1> -->
   
   
   <div id="sidebar_div">
@@ -27,4 +27,5 @@
     <%= render "bottom_nav" %>
 
   
+</div>
 </div>
