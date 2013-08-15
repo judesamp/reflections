@@ -24,7 +24,8 @@
         <p class="description"><%= sanitize(collection.description) %></p>
         <div class="price_line">
           <span class="price"><%= number_to_currency(collection.price) %></span>
-         <span><button class="btn btn-info">Purchase</button></span>
+          <%= button_to 'Add to Cart', line_items_path(collection_id: collection), :class=>"btn btn-info" %>
+          
         </div>
       </div>
     </div>

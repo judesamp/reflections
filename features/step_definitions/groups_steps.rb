@@ -1,13 +1,13 @@
-Given(/^there are no groups$/) do
-end
-
-When(/^I go to admin index$/) do
-  visit '/collections'
-end
-
-Then(/^I should have the option to create one$/) do
-  page.should have_link "New Collection"
-end
+# Given(/^there are no groups$/) do
+# end
+# 
+# When(/^I go to admin index$/) do
+#   visit '/collections'
+# end
+# 
+# Then(/^I should have the option to create one$/) do
+#   page.should have_link "New Collection"
+# end
 
 # When(/^I click on New Group$/) do
 #   visit '/groups'

@@ -50,50 +50,33 @@ end
 
 
 
+Given(/^there are more than (\d+) reflections$/) do |arg1|
+  reflection = create_list(:reflection, 12)
+  Reflection.all.length.should == 12
+end
 
+When(/^I go the home page$/) do
+  visit '/'
+end
 
+Then(/^I should see the first (\d+) reflections displayed$/) do |count|
+  count.to_i.times do
+    page.find("#sidebar_div").has_selector?("link_#{count.to_i}")
+  end
+  
+end
 
-# 
-# # Given(/^I have I have gone to the home page again$/) do
-# #   reflection = create_list(:reflection, 7)
-# #   visit '/'
-# # end
-# # 
-# # 
-# # When(/^I click on the right arrow key in the bottom nav$/) do
-# #   page.find('#right_arrow_button')
-# # end
-# # 
-# # Then(/^the background video should change$/) do
-# #   pending # ("//source[@src = 'assets/tunnel_animation.mp4']")
-# # end
-# 
-# 
-# 
-# Given(/^there are more than ten reflections$/) do
-#   reflection = create_list(:reflection, 20)
-# end
-# 
-# When(/^I go the home page$/) do
-#   visit '/'
-# end
-# 
-# Then(/^I should see the first ten reflections displayed$/) do
-#   page.should_not have_link "11"
-# end
-# 
-# When(/^I click on the arrow at the bottom of the side nave$/) do
-#   click_link('Next')
-# end
-# 
-# Then(/^I should see the next ten displayed in the side nav \(or as many as available\)$/) do
-#   page.should_not have_link("1", href: "/reflections/1")
-#   page.should_not have_link "10"
-#   page.should have_link "11"
-#   page.should have_link "20"
-# end
+When(/^I click on the arrow at the bottom of the side nav$/) do
+  click_link('Next →')
+end
 
-
-
-
-
+Then(/^I should see the next (\d+) displayed in the sidebar \(or as many as available\)$/) do |count|
+  page.should_not have_link "7"
+  page.should_not have_link "13"
+  page.should have_link "11"
+  page.should have_link "12"
+  
+  count.to_i.times do
+    page.find("#sidebar_div").has_selector?("link_#{count.to_i}")
+  end 
+end

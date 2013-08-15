@@ -3,7 +3,7 @@ class MainController < ApplicationController
   
   
   def index
-    @sidebar_list = free_devotions.paginate(:page => params[:page], :per_page => 10)
+    @sidebar_list = free_devotions.paginate(:page => params[:page], :per_page => 7)
     #@sidebar_list = user_devotions.paginate(:page => params[:page], :per_page => 10)
   end
   

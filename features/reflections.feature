@@ -24,8 +24,8 @@ Feature: Reflections Index
     And there are more than 7 reflections
     When I go the home page 
     Then I should see the first 7 reflections displayed
-    When I click on the arrow at the bottom of the side nave
-    Then I should see the next 7 displayed in the sidebar (or as many as available)
+    When I click on the arrow at the bottom of the side nav
+    Then I should see the next 5 displayed in the sidebar (or as many as available)
     
   
     

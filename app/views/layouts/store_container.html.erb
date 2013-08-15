@@ -35,7 +35,7 @@
               <li class ="active"><%= link_to 'Home', main_path %></li>
               <li><%= link_to 'News', main_path %></li>
               <li><%= link_to 'About us', main_path %></li>
-              <li><%= link_to 'Cart', main_path %></li>
+              
             
   
           
@@ -49,8 +49,13 @@
           <%= button_to 'Logout', logout_path, method: :delete %>
           <% end %>
         
+          <div class = "pull-right">
+            
+            <%= link_to 'View Cart', cart_path(session[:cart_id]), :class=>"btn btn-info" %>
+          </div>
      
     </div>
+    
  
     
       
